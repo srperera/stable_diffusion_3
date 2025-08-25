@@ -51,27 +51,17 @@ class CIFARWithText(Dataset):
 
         if cifar100:
             self.dataset = datasets.CIFAR100(
-                root="/fs/scratch/PAS2948/jianli/sp_learning/projects/sd3/data",
+                root="sd3/data",
                 train=train,
                 download=True,
             )
             self.class_names = self.dataset.classes
         else:
-            # self.dataset = datasets.CIFAR10(
-            #     root="/fs/scratch/PAS2948/jianli/sp_learning/projects/sd3/data",
-            #     train=train,
-            #     download=True,
-            # )
             self.dataset = datasets.FashionMNIST(
-                root="/fs/scratch/PAS2948/jianli/sp_learning/projects/sd3/data",
+                root="sd3/data",
                 train=train,
                 download=True,
             )
-            # self.dataset = datasets.CelebA(
-            #     root="/fs/scratch/PAS2948/jianli/sp_learning/projects/sd3/data",
-            #     split="train",
-            #     download=True,
-            # )
             self.class_names = self.dataset.classes
 
     def __len__(self):
